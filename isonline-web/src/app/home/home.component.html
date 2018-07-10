@@ -1,0 +1,19 @@
+<div [hidden]="!selected.length == 0">
+    <app-principal-toolbar title="Home"></app-principal-toolbar>
+
+    <app-menu-toolbar active="home"></app-menu-toolbar>
+
+    <div class="content1">
+        <div class="chart">
+          <canvas id="homeChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="selected.length > 0">
+  <app-action-toolbar (onBack)="onBack()" title="Detail Monitoring Day"></app-action-toolbar>
+
+  <div class="content2">
+      <app-home-detail [list]="selected"></app-home-detail>
+  </div>
+</div>

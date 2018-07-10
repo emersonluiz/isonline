@@ -1,0 +1,30 @@
+<app-principal-toolbar title="Monitoring"></app-principal-toolbar>
+
+<app-menu-toolbar active="monitoring"></app-menu-toolbar>
+
+<div class="content">
+
+    <mat-card class="box" [ngClass]="item.status?'mat-list-online':'mat-list-offline'" *ngFor="let item of list" (click)="onDetail(item.id)">
+        
+      <div class="title">
+        <strong>{{item.site.description}}</strong>
+        <div style="font-size:12px">{{item.site.host}}</div>
+        <div style="font-size:13px">Last Date: {{item.date | date:'dd/MM/yyyy HH:mm'}}</div>
+        <div style="font-size:13px" *ngIf="item.status">Status: <b>ONLINE</b></div>
+        <div style="font-size:13px" *ngIf="!item.status">Status: <b>OFFLINE</b></div>
+        <!--
+        <br />
+        <mat-chip-list>
+            <mat-chip *ngIf="item.status" class="online">online</mat-chip>
+            <mat-chip *ngIf="!item.status" class="offline">offline</mat-chip>
+        </mat-chip-list>-->
+      </div>
+      <div class="box-icon">
+        <mat-icon mat-list-icon *ngIf="item.site.type === 'Service'" class="icon">cloud</mat-icon>
+        <mat-icon mat-list-icon *ngIf="item.site.type === 'Equipment'" class="icon">router</mat-icon>
+        <mat-icon mat-list-icon *ngIf="item.site.type === 'Other'" class="icon">category</mat-icon>
+      </div>
+        
+    </mat-card>
+
+</div>

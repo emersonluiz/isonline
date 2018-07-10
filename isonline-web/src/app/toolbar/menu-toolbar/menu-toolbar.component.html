@@ -1,0 +1,28 @@
+<div class="header">
+    <mat-toolbar>
+        <table style="width: 100%; text-align: center;">
+            <tr>
+                <td>
+                    <button mat-icon-button type="button" matTooltip="Home" (click)="onHome()" [ngClass]="active === 'home'?'active':'no-active'">
+                        <mat-icon>home</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button mat-icon-button type="button" matTooltip="Monitoring" (click)="onMonitoring()" [ngClass]="active === 'monitoring'?'active':'no-active'">
+                        <mat-icon>dvr</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button mat-icon-button type="button" matTooltip="Sites" (click)="onSite()" [ngClass]="active === 'site'?'active':'no-active'">
+                        <mat-icon>public</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button mat-icon-button type="button" matTooltip="Reports" (click)="onReport()" [ngClass]="active === 'report'?'active':'no-active'">
+                        <mat-icon>import_contacts</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </mat-toolbar>
+</div>

@@ -1,0 +1,37 @@
+<app-action-toolbar (onBack)="onBack()" title="Register Site"></app-action-toolbar>
+
+<div class="content">
+    <mat-card class="card">
+
+      <mat-form-field [style.width]="'100%'">
+        <input type="text" matInput placeholder="Host" required name="host" [(ngModel)]="site.host">
+      </mat-form-field>
+
+      <mat-form-field [style.width]="'100%'">
+        <input type="text" matInput placeholder="Description" name="description" [(ngModel)]="site.description">
+      </mat-form-field>
+
+      <mat-form-field [style.width]="'100%'">
+        <mat-select placeholder="Type" name="description" [(ngModel)]="site.type">
+          <mat-option *ngFor="let item of types" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br><br>
+
+      <mat-checkbox name="auth" [(ngModel)]="site.auth">Authentication</mat-checkbox>
+
+      <br><br>
+
+      <div class="button-bar">
+          <button mat-raised-button color="primary"
+            (click)="save()" 
+            [disabled]="site.host === undefined || site.host === '' || 
+                        (this.site.host.indexOf('http://') === -1 && this.site.host.indexOf('HTTP://') === -1) ||
+                        this.site.host.indexOf('.') === -1">Save</button>
+      </div>
+
+    </mat-card>
+</div>

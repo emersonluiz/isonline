@@ -1,0 +1,37 @@
+<app-principal-toolbar title="Sites"></app-principal-toolbar>
+
+<app-menu-toolbar active="site"></app-menu-toolbar>
+
+<div class="content">
+
+  <mat-list *ngFor="let item of list">
+    
+      <mat-list-item>
+        <mat-icon mat-list-icon *ngIf="item.type === 'Service'">cloud</mat-icon>
+        <mat-icon mat-list-icon *ngIf="item.type === 'Equipment'">router</mat-icon>
+        <mat-icon mat-list-icon *ngIf="item.type === 'Other'">category</mat-icon>
+        <h4 mat-line><strong>{{item.host}}</strong></h4>
+        <p mat-line>Description: {{item.description}}</p>
+        <p mat-line>Authentication: {{item.auth}}</p>
+        <p mat-line>Type: {{item.type}}</p>
+        <button mat-icon-button type="button" (click)="onDelete(item.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+    
+  </mat-list>
+
+  <mat-list-item>
+    <h4 mat-line>&nbsp;</h4>
+    <p mat-line>&nbsp;</p>
+  </mat-list-item>
+
+</div>
+
+<span class="done">
+  <button mat-fab type="button" (click)="onAdd()" color="primary">
+    <mat-icon>add circle</mat-icon>
+  </button>
+</span>

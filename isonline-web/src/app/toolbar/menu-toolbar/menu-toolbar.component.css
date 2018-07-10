@@ -1,0 +1,19 @@
+.header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    margin-top: 3.5rem;
+}
+
+mat-toolbar {
+    background: white;
+}
+
+.active {
+    color: blue;
+}
+
+.no-active {
+    color: black;
+}

@@ -1,0 +1,50 @@
+.mat-list-online {
+    background: #8FBC8F;
+    margin: 10px;
+}
+
+.mat-list-offline {
+    background: #FF6A6A;
+    margin: 10px;
+}
+
+.online {
+    background: green; color: white; font-weight: bold
+}
+
+.offline {
+    background: #CD0000; color: white; font-weight: bold
+}
+
+.box {
+    display: flex;
+    align-items: center; display: inline-block;
+    margin: 10px 20px;
+    vertical-align: top;
+    width: 300px;
+    cursor: pointer;
+}
+
+.box .title {
+    position: relative;
+    float:left;
+    width: 240px;
+    text-align: left;
+}
+
+.box .box-icon {
+    position: relative;
+    float:right;
+    height: 60px;
+    width: 40px;
+}
+
+.icon {
+    font-size: 40px;
+    line-height: 55px;
+}
+
+.bar {
+    margin:0 20px;
+    margin-bottom: 10px;
+}

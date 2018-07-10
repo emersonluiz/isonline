@@ -1,0 +1,23 @@
+.card {
+    margin: 10px;
+}
+
+.link{
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 8.2rem;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+
+mat-list {
+    background: white;
+    margin: 10px;
+}
